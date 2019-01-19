@@ -19,10 +19,11 @@ library(ggplot2)
 
 ## The data
 
-I'll use some data I found about musicals because I was recently reminded of my childhood love for musicals (especially Rodgers & Hammerstein) and I just received my first desk rejection from Psychological Science (#rightofpassage?), so I don't feel like doing anything even remotely serious.
+I'll use some data I found about musicals because I was recently reminded of my childhood love for musicals (especially Rodgers & Hammerstein). 
+
 I took the inflation-adjusted box office numbers and release year of the 27 top grossing musicals from [this website](http://www.playbill.com/article/the-27-highest-grossing-broadway-film-adaptations-of-all-time) and put them in a spreadsheet. (Why did they only include the top *27* musicals? Seems like a strange number to decide on.) 
 
-Anyhow, for each musical I typed "[musical name] tracklisting" and "[musical name] runtime" into google and recorded what came up for each search in my spreadsheet, which can be downloaded and contributed to [HERE]). There's probably a way I could have written some code to automatically scrape that data and more, but that would've been a whole thing.
+Anyhow, for each musical I typed "[musical name] tracklisting" and "[musical name] runtime" into google and recorded what came up for each search in my spreadsheet, which can be downloaded on [my github](https://github.com/durkeepk/musicals) (feel free to contribute to the data as well!). There's probably a way I could have written some code to automatically scrape that data and more, but that would've been a whole thing.
 
 Anyway, here is the simple dataset:
 
@@ -68,7 +69,7 @@ plot2
 
 ```
 
-Looks like there might be actually be a positive relationship, although it's probably driven by that outlier that is the highest-grossing musical. We could look in the dataframe to see what that is, but this is a plotting tutorial so let's make the plot tell us. We can add text labels to the point using `geom_text` and change the distance of the labels from the points using `vjust` and `hjust`. Because this adds another layer that depends on the data, we have to provide the aesthetics, using the `label` arguement in this case.
+Looks like there might be actually a relationship, although it's probably driven by that outlier that is the highest-grossing musical. We could look in the dataframe to see what that is, but this is a plotting tutorial so let's make the plot tell us. We can add text labels to the point using `geom_text` and change the distance of the labels from the points using `vjust` and `hjust`. Because this adds another layer that depends on the data, we have to provide the aesthetics, using the `label` arguement in this case.
 
 ```{r plotlabels}
 # add text labels with the musical name
